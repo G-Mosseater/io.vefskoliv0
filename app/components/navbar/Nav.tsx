@@ -1,8 +1,19 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { NavStyle, NavBackground, TextStyle, LinkStyle, Icon } from "./style";
+
+import {
+  NavStyle,
+  NavBackground,
+  TextStyle,
+  LinkStyle,
+  Icon,
+  LogOutButton,
+} from "./style";
+
+import { signOut } from "serverActions/signOut";
 import { usePathname } from "next/navigation";
+
 import Logo from "../../../public/LOGO-navbar.svg";
 import Home from "../../../public/icons/home.svg";
 import Guide from "../../../public/icons/guides.svg";
@@ -51,16 +62,17 @@ const Nav = () => {
           return (
             <LinkStyle
               key={index}
-              myLink={list.link}
-              pathName={pathname}
+              mylink={list.link}
+              pathname={pathname}
               href={list.link}
             >
               <Icon
-                myLink={list.link}
-                pathName={pathname}
+                mylink={list.link}
+                pathname={pathname}
                 src={list.icon}
                 alt="icons"
               ></Icon>
+
               <TextStyle>{list.text}</TextStyle>
             </LinkStyle>
           );
