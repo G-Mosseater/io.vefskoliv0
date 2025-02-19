@@ -47,9 +47,14 @@ const Nav = () => {
       <Image src={Logo} alt="vefskolinn-logo" />
 
       <NavStyle>
-        {navbarList.map((list) => {
+        {navbarList.map((list, index) => {
           return (
-            <LinkStyle myLink={list.link} pathName={pathname} href={list.link}>
+            <LinkStyle
+              key={index}
+              myLink={list.link}
+              pathName={pathname}
+              href={list.link}
+            >
               <Icon
                 myLink={list.link}
                 pathName={pathname}
