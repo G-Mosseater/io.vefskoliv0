@@ -37,6 +37,9 @@ export default async function RootLayout({
             <LayoutGrid>
                 {/* You can include your Sidebar here if needed */}
                 <Nav />
+              <NavbarContainer>
+                <NavBar />
+              </NavbarContainer>
               <Main>
                 {/* Place the Cali (Calendar) component here */}
                 {children}

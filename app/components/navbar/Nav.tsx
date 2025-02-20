@@ -34,7 +34,7 @@ const Nav = () => {
     {
       icon: Schedule,
       text: "Schedule",
-      link: "/schedule" /* Schedule dont exists in pages */,
+      link: "/calendar" /* Schedule dont exists in pages */,
     },
     {
       icon: HallOfFame,
