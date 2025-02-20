@@ -50,7 +50,10 @@ const Title = styled.h1`
 `
 
 const CalendarContainer = styled.div`
-  height: 500px;
+display: flex;
+justify-content: center;
+  height: 600px;
+  max-width: 1024px;
 `
 
 const Button = styled.button`

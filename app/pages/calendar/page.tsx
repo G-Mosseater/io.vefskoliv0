@@ -1,12 +1,9 @@
 import CalendarScheduler from "components/calendar/Calendar";
 
-
-const Calendar = () => {
+const CalendarPage = () => {
   return (
-    <div>
-      <CalendarScheduler />
-    </div>
+    <CalendarScheduler />
   );
 };
 
-export default Calendar;
+export default CalendarPage;
