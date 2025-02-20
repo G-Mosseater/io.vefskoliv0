@@ -17,10 +17,6 @@ export const LayoutGrid = styled.div`
 
   @media (min-width: ${breakpoint}) {
     grid-template-columns: minmax(0, 234px) auto;
-<<<<<<< HEAD
-=======
-
->>>>>>> new
     grid-template-rows: auto 15fr;
     grid-template-areas:
       "sidebar navbar"
