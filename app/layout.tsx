@@ -2,19 +2,18 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "globalStyles/globals.css";
 import StyledComponentsRegistry from "utils/registry";
-import AnimatedBackground from "globalStyles/animatedBackground";
-import {
-  LayoutGrid,
-  SidebarContainer,
-  NavbarContainer,
-  Main,
-} from "./globalStyles/layout";
-import Sidebar from "./components/sidebar/sidebar";
+
 import { auth } from "../auth";
 import LoginPage from "pages/login/page";
-import { NavBar } from "components/navigation/NavBar";
 import Nav from "components/navbar/Nav";
-
+import FullCalendar from "components/calendar/Calendar";
+import { Profile } from "components/profile/profile";
+import {
+  HeaderContainer,
+  LayoutGrid,
+  Main,
+  SidebarContainer,
+} from "globalStyles/layoutStyles";
 const poppins = Poppins({ weight: "400", style: "normal", subsets: ["latin"] });
 // trigger rebuild
 export const metadata: Metadata = {
@@ -30,24 +29,26 @@ export default async function RootLayout({
 }>) {
   const session = await auth();
 
+  const user = session?.user;
+
   return (
     <html lang="en">
       <body className={poppins.className}>
         <StyledComponentsRegistry>
-          <AnimatedBackground />
-          {session?.user ? (
-            <>
-              <LayoutGrid>
-                <SidebarContainer>
-                  {/*<Sidebar />*/}
-                  <Nav />
-                </SidebarContainer>
-                <NavbarContainer>
-                  <NavBar />
-                </NavbarContainer>
-                <Main>{children}</Main>
-              </LayoutGrid>
-            </>
+          {user ? (
+            <LayoutGrid>
+              <SidebarContainer>
+                {/* You can include your Sidebar here if needed */}
+                <Nav />
+              </SidebarContainer>
+              <HeaderContainer>
+                <Profile session={session} />
+              </HeaderContainer>
+              <Main>
+                {/* Place the Cali (Calendar) component here */}
+                {children}
+              </Main>
+            </LayoutGrid>
           ) : (
             <LoginPage />
           )}

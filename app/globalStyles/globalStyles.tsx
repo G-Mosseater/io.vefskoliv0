@@ -14,14 +14,16 @@ export const FullScreenWrapper = styled(Wrapper)`
   justify-content: center;
   width: 100dvw;
   height: 100dvh;
+  color: white;
 `;
 
 export const Border = styled(Wrapper)`
-  border: 1px solid var(--theme-module3-100);
+  border: 1px solid #2b5b76;
   border-radius: 0.5rem;
 `;
 
 export const MaterialButton = styled(Button)`
+  width: 100%;
   text-align: left;
   padding: 0.5rem 0.75rem;
 `;

@@ -16,7 +16,8 @@ export const LayoutGrid = styled.div`
   grid-auto-rows: min-content;
 
   @media (min-width: ${breakpoint}) {
-    grid-template-columns: minmax(0, 350px) auto;
+    grid-template-columns: minmax(0, 234px) auto;
+
     grid-template-rows: auto 15fr;
     grid-template-areas:
       "sidebar navbar"
@@ -35,18 +36,14 @@ export const SidebarContainer = styled.div`
     display: block;
   }
 `;
-export const NavbarContainer = styled.div`
+export const HeaderContainer = styled.div`
   width: 100%;
-  grid-area: navbar;
-  padding: 1rem;
+  padding: 60px;
+  padding-top: 58px;
 `;
 export const Main = styled.div`
-  padding: 1rem;
-  max-width: 100%;
-  height: 100%;
-  overflow: scroll;
-  background-color: white;
-  border: solid 1px #6563eb;
-  border-radius: 0.8rem;
+  width: 100%;
+  height: 241px;
+  border-radius: 8px;
   grid-area: main;
 `;
