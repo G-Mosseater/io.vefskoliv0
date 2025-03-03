@@ -1,5 +1,7 @@
 import { CopyrightContainer } from "./style";
 
 export default function Copyright() {
-  return <CopyrightContainer>© 2025 Tæknaskóli</CopyrightContainer>;
+  return <CopyrightContainer>     
+     <p>© {new Date().getFullYear()} Tækniskólinn </p>
+</CopyrightContainer>;
 }
